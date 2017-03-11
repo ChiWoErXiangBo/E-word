@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>新建网页</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="布尔教育 http://www.itbool.com" />
+<link rel="stylesheet" type="text/css" href="./images/reset.css">
+<link rel="stylesheet" type="text/css" href="./images/new.css">
+<style>
+#t1{
+    position: relative;
+    left: -30px;
+}
+#s_province{
+    position: relative;
+    left:30px;
+}
+#s_city{
+    position: relative;
+    left:30px;
+}
+#s_county{
+    position: relative;
+    left:30px;
+}
+#title{
+	font-size: 30px;
+	text-align: center;
+	font-weight: 50px;
+
+}
+	#zhuce{
+		font-size: 15px;
+		text-align: center;
+	}
+	
+</style>
+</head>
+    <body>
+    	<body align="center">
+    	<div id = "container">
+    		<div id = "head">
+            <img src="./images/logo32_.png" alt="" />  	
+		    		<ul id ="nav">
+		    			<p id = "first">
+		    			<li><a href="./index.php">首&nbsp;&nbsp;页</a></li>
+		    			</p>
+
+		    			<li><a href="./introduction.html">手环简介</a></li>
+		    			<li><a href="./buypage.html">现在购买</a></li>
+		    			<li><a href="">使用说明</a></li>
+		    			<li><a href="">产品特点</a></li>
+		    			<li><a href="">关于我们</a></li>
+		    			<li><a href="./complain.html">意见反馈</a></li>
+
+		    		</ul>
+    			</div>
+    			<div id = 'body2'>
+    				<br /><br /><br /><br />
+    				<p id='title'>请注册</p><br /><br />
+				        <form action="registsuccess.php" method="post" id='zhuce' onsubmit="return check();">
+				        	用&nbsp;户&nbsp;名:&nbsp;<input type="text" name='user' value='admin' id='user'/><br /><br />
+				        	密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:&nbsp;<input type="text" name='password' id='passwords'/><br /><br />
+				        	确认密码:&nbsp;<input type="text" name='password' id='passwords2'/><br />
+
+                            <br />
+                            <p>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:<input type="text" id="name" name="name"/></p>
+                            <br />
+                            <p>手&nbsp;&nbsp;机&nbsp;&nbsp;号<input type="text" id="number" name = "number"/></p>
+                            <br />
+
+                            <div>
+
+                            <p id='t1'>请选择你的收货地址：</p>
+                            <br />
+                            <select id="s_province" name="s_province"></select>  
+                            <select id="s_city" name="s_city" ></select>  
+                            <select id="s_county" name="s_county"></select>
+                            <script class="resources library" src="./images/area.js" type="text/javascript"></script>
+                            
+                            <script type="text/javascript">_init_area();</script>
+
+                            
+                            </div>
+                            <br />
+                            <p>具体地址
+                                <input type="text" id="position" name="position" /></p>
+				        	<input type="submit" class='button'value='注册'function='check'/>
+				        </form>
+    			 </div>	
+    		</div>
+    		<script>
+   
+    function check(){
+        var passwords2 = document.getElementById('passwords2').value;
+        var passwords = document.getElementById('passwords').value;
+        var user = document.getElementById('user').value;
+        var name = document.getElementById('name').value;
+        var number = document.getElementById('number').value;
+        var s_province = document.getElementById('s_province').value;
+        var s_city = document.getElementById('s_city').value;
+        var s_county = document.getElementById('s_county').value;
+        var position =document.getElementById('position').value;
+        if(passwords2==''||passwords==''||user==''||name==""||number==""||position==""){
+            alert('请将信息填写完整！');
+            return false;
+        }
+        else{
+    	if(passwords2==passwords){
+    		return true;
+
+    	}
+    	else{
+    		alert('请重新输入，因为密码不一致');
+    		return false;
+    		
+    	}
+        }
+
+
+    }
+
+    </script>
+    </body>
+</html>
